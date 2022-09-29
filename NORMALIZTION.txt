@@ -1,0 +1,57 @@
+EXAMPLE 1
+
+
+1NF
+1- order: (order_num pk ,order date ,clerk_numn , clerk_name,cust_num , cust_name ,cust_add )
+2- items: ((order_num,item ordered)pk ,description, quantity , unit_price)
+
+
+2NF 
+1- order: (order_num pk ,order date ,clerk_numn , clerk_name,cust_num , cust_name ,cust_add )
+2- items: (item ordered pk ,description , unit_price)
+3- item_order: ((order_num,item ordered)pk , quantity)
+
+
+
+3NF 
+
+1- order: (order_num pk ,order date ,clerk_numn ,cust_num , )
+2- items: (item ordered pk ,description , unit_price)
+3- item_order: ((order_num,item ordered)pk , quantity)
+4- CUSTOMER :(cust_num PK, cust_name  ,cust_add)
+5- CUST_CLERK( clerk_numn PK , clerk_name)
+
+
+
+
+
+
+
+
+EXAMPLE 2
+
+
+1NF
+1-  DEPARTMENT:(dep_num PK , dep_name , location , mgr_name, mgr_id , tel)
+2-  CUSTOMER:( (cust_num,dep_num ) pk ,cust_name , date_of_com, nature_of_com)
+
+
+2NF 
+
+1- DEPARTMENT:(dep_num PK , dep_name , location , mgr_name, mgr_id , tel)
+2- CUSTOMER:  (cust_num pk ,cust_name )
+3- CUST_COM: ((cust_num,dep_num ) PK , date_of_com, nature_of_com)
+
+3NF 
+
+
+1- DEPARTMENT:(dep_num PK , dep_name , location , tel, mgr_id)
+2- CUSTOMER: (cust_num pk ,cust_name )
+3- CUST_COM: ((cust_num,dep_num ) PK , date_of_com, nature_of_com) 
+4- MANGER_DET:(mgr_id PK , mgr_name)
+
+
+
+
+
+
